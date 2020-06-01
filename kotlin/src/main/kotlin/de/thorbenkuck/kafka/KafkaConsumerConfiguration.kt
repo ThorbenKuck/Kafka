@@ -11,8 +11,8 @@ class KafkaConsumerConfiguration(
 		private val factory: SmartContainerFactory
 ) {
 
-	@Bean("exampleMessageContainerFactor")
-	fun exampleMessageContainerFactor(
+	@Bean("exampleMessageContainerFactory")
+	fun exampleMessageContainerFactory(
 			properties: KafkaConsumerProperties
 	): ConcurrentKafkaListenerContainerFactory<String, ExampleMessage> = factory.createContainerFactory(properties.topic)
 

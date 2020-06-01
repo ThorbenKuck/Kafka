@@ -1,15 +1,15 @@
 package de.thorbenkuck.kafka
 
 import de.thorbenkuck.kafka.data.ExampleMessage
-import org.springframework.context.annotation.Configuration
 import org.springframework.kafka.annotation.KafkaListener
+import org.springframework.stereotype.Component
 
-@Configuration
+@Component
 class KafkaConsumer {
 
 	@KafkaListener(
 			topics = ["\${kafka.input.topic}"],
-			containerFactory = "exampleMessageContainerFactor"
+			containerFactory = "exampleMessageContainerFactory"
 	)
 	fun listen(exampleMessage: ExampleMessage) {
 		println("We received: " + exampleMessage.message)

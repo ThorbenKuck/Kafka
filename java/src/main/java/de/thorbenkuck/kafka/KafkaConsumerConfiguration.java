@@ -14,8 +14,8 @@ public class KafkaConsumerConfiguration {
         this.factory = factory;
     }
 
-    @Bean("exampleMessageContainerFactor")
-    public ConcurrentKafkaListenerContainerFactory<String, ExampleMessage> exampleMessageContainerFactor(
+    @Bean("exampleMessageContainerFactory")
+    public ConcurrentKafkaListenerContainerFactory<String, ExampleMessage> exampleMessageContainerFactory(
             KafkaConsumerProperties properties
     ) {
         return factory.createContainerFactory(properties.getTopic(), ExampleMessage.class);
